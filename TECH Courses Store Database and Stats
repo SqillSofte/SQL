@@ -1,0 +1,56 @@
+--In this SQL, I have created a table of tech courses highlighting thier prices, duration and mode
+
+
+CREATE TABLE Courses (id INTEGER PRIMARY KEY, course_name TEXT, price INTEGER, course_duration TEXT, mode TEXT);
+
+INSERT INTO Courses VALUES
+(1, "MS Excel", 20000, "1 month", "Offline"),
+(2, "SQL", 50000, "3 months", "Hybrid"),
+(3, "PowerBi", 30000, "2 months", "Hybrid"),
+(4, "Tableau", 30000, "2 months", "Hybrid"),
+(5, "R", 25000, "1 month", "Online"),
+(6, "Python", 40000,"3 months", "Hybrid"),
+(7, "HTML", 15000, "1 month", "Offline"),
+(8, "CSS", 20000, "2 months", "Online"),
+(9, "Javascript", 35000, "4 months", "Hybrid"),
+(10, "ReactJS", 25000, "3 months", "Online"),
+(11, "UI UX Design", 35000, "3 months", "Online"),
+(12, "MongoDB", 20000, "2 months", "Online"),
+(13, "MS PowerPoint", 15000, "1 month", "Offline"),
+(14, "MS Access", 15000, "1 month", "Offline"),
+(15, "Canva", 10000,"2 months", "Hybrid");
+SELECT * FROM Courses;
+
+
+--Next, I have ordered all the courses in the table by price (in ascending order.)
+
+SELECT * FROM Courses ORDER BY price asc;
+
+
+--I have used some aggregate functions to describe the data
+
+SELECT SUM(price) FROM Courses;
+SELECT MAX(price) FROM Courses;
+SELECT MIN(price) FROM Courses;
+SELECT AVG(price) FROM Courses;
+
+
+--I have selected and group all the course by their mode (i.e whether online, offline or hybrid) and course duration
+
+SELECT mode FROM Courses GROUP BY mode;
+SELECT * FROM Courses GROUP BY course_duration;
+SELECT course_duration FROM Courses;
+
+
+--I have summed up the prices of the courses grouped by the course duration
+
+SELECT course_duration, SUM(price) FROM Courses GROUP BY course_duration;
+
+
+--I have selected only some specific columns from the table
+
+SELECT course_duration, price FROM Courses;
+SELECT course_name FROM Courses;
+
+
+
