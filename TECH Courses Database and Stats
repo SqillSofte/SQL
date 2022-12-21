@@ -1,4 +1,4 @@
---In this SQL, I have created a table of tech courses highlighting thier prices, duration and mode
+--In this SQL, I have created a table of tech courses highlighting their prices, duration and mode
 
 
 CREATE TABLE Courses (id INTEGER PRIMARY KEY, course_name TEXT, price INTEGER, course_duration TEXT, mode TEXT);
@@ -35,11 +35,10 @@ SELECT MIN(price) FROM Courses;
 SELECT AVG(price) FROM Courses;
 
 
---I have selected and group all the course by their mode (i.e whether online, offline or hybrid) and course duration
+--I have selected and grouped all the courses by their mode (i.e whether online, offline or hybrid) and course duration
 
 SELECT mode FROM Courses GROUP BY mode;
 SELECT * FROM Courses GROUP BY course_duration;
-SELECT course_duration FROM Courses;
 
 
 --I have summed up the prices of the courses grouped by the course duration
